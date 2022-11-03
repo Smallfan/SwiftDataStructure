@@ -1,5 +1,5 @@
 //
-//  LinkNode.swift
+//  SingleLinkNode.swift
 //  SwiftDataStructure
 //
 //  Created by Smallfan on 2022/11/2.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-class LinkNode<E: Equatable> {
+class SingleLinkNode<E: Equatable & Comparable> {
     var data: E
-    var next: LinkNode?
+    var next: SingleLinkNode?
     
     
     
@@ -17,7 +17,7 @@ class LinkNode<E: Equatable> {
         self.data = data
     }
     
-    static func == (lhs: LinkNode, rhs: LinkNode) -> Bool {
+    static func == (lhs: SingleLinkNode, rhs: SingleLinkNode) -> Bool {
         return lhs.data == rhs.data
     }
 }

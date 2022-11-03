@@ -15,14 +15,14 @@ protocol LinkListOperation {
     func append(atHead element: E)
     func append(atTail element: E)
     
-    func insert(element: E, i: Int)
-//    func update(element: E, i: Int)
+    func insert(element: E, at index: Int)
+    func update(element: E, at index: Int)
     
-//    func index(i: Int) -> E?
-//    func contains(element: E) -> Bool
-//    
-//    func remove(i: Int) -> E?
-//    func removeFirst() -> E?
-//    func removeLast() -> E?
-//    func removeAll()
+    func index(of i: Int) -> E?
+    func contains(_ element: E) -> Bool
+    
+    func remove(at index: Int) -> E?
+    func removeFirst() -> E?
+    func removeLast() -> E?
+    func removeAll()
 }

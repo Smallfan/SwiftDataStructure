@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C47CCBD12912C27200224309 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBD02912C27200224309 /* main.swift */; };
-		C47CCBE42912C46900224309 /* LinkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE32912C46900224309 /* LinkNode.swift */; };
+		C47CCBE42912C46900224309 /* SingleLinkNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE32912C46900224309 /* SingleLinkNode.swift */; };
 		C47CCBE62912C4B900224309 /* LinkListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE52912C4B900224309 /* LinkListOperation.swift */; };
 		C47CCBE82912C4F700224309 /* SingleLinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE72912C4F700224309 /* SingleLinkList.swift */; };
 		C47CCBEA2912C5C300224309 /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE92912C5C300224309 /* SelectionSort.swift */; };
 		C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBEC2912C5EA00224309 /* InsertionSort.swift */; };
+		C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,11 +31,12 @@
 /* Begin PBXFileReference section */
 		C47CCBCD2912C27200224309 /* SwiftDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47CCBD02912C27200224309 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		C47CCBE32912C46900224309 /* LinkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkNode.swift; sourceTree = "<group>"; };
+		C47CCBE32912C46900224309 /* SingleLinkNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkNode.swift; sourceTree = "<group>"; };
 		C47CCBE52912C4B900224309 /* LinkListOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListOperation.swift; sourceTree = "<group>"; };
 		C47CCBE72912C4F700224309 /* SingleLinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkList.swift; sourceTree = "<group>"; };
 		C47CCBE92912C5C300224309 /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		C47CCBEC2912C5EA00224309 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
+		C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkListAlgs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 		C47CCBD72912C27B00224309 /* LinkList */ = {
 			isa = PBXGroup;
 			children = (
-				C47CCBE32912C46900224309 /* LinkNode.swift */,
+				C47CCBEE2913703A00224309 /* Algs */,
+				C47CCBE32912C46900224309 /* SingleLinkNode.swift */,
 				C47CCBE52912C4B900224309 /* LinkListOperation.swift */,
 				C47CCBE72912C4F700224309 /* SingleLinkList.swift */,
 			);
@@ -165,6 +168,14 @@
 			path = Complex;
 			sourceTree = "<group>";
 		};
+		C47CCBEE2913703A00224309 /* Algs */ = {
+			isa = PBXGroup;
+			children = (
+				C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */,
+			);
+			path = Algs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,8 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47CCBD12912C27200224309 /* main.swift in Sources */,
-				C47CCBE42912C46900224309 /* LinkNode.swift in Sources */,
+				C47CCBE42912C46900224309 /* SingleLinkNode.swift in Sources */,
 				C47CCBE62912C4B900224309 /* LinkListOperation.swift in Sources */,
+				C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */,
 				C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */,
 				C47CCBE82912C4F700224309 /* SingleLinkList.swift in Sources */,
 				C47CCBEA2912C5C300224309 /* SelectionSort.swift in Sources */,
