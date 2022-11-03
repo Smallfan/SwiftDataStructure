@@ -68,7 +68,7 @@ func partitionLinkList(list: SingleLinkList<Int>, x: Int) -> SingleLinkList<Int>
         p = temp
     }
     
-    p1!.next = l2.head
+    p1!.next = l2.head?.next
     return l1
 }
 
