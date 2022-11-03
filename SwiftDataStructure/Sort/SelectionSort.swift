@@ -7,7 +7,7 @@
 
 import Foundation
 
-func selectSort<T: Comparable>(a: inout [T]) {
+func selectionSort<T: Comparable>(a: inout [T]) {
     let n = a.count
     for i in 0..<n {
         var min = i
@@ -27,6 +27,6 @@ func selectSort<T: Comparable>(a: inout [T]) {
 
 fileprivate func test() {
     var a = ["S", "O" , "R", "T", "E", "X", "A", "M", "P", "L", "E"]
-    selectSort(a: &a)
+    selectionSort(a: &a)
     print(a)
 }

@@ -14,6 +14,8 @@
 		C47CCBEA2912C5C300224309 /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBE92912C5C300224309 /* SelectionSort.swift */; };
 		C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBEC2912C5EA00224309 /* InsertionSort.swift */; };
 		C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */; };
+		C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF52913987200224309 /* PriorityQueue.swift */; };
+		C47CCBF8291398A600224309 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF7291398A600224309 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,8 @@
 		C47CCBE92912C5C300224309 /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		C47CCBEC2912C5EA00224309 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkListAlgs.swift; sourceTree = "<group>"; };
+		C47CCBF52913987200224309 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		C47CCBF7291398A600224309 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,8 @@
 		C47CCBD72912C27B00224309 /* LinkList */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF12913842200224309 /* Define */,
 				C47CCBEE2913703A00224309 /* Algs */,
-				C47CCBE32912C46900224309 /* SingleLinkNode.swift */,
-				C47CCBE52912C4B900224309 /* LinkListOperation.swift */,
-				C47CCBE72912C4F700224309 /* SingleLinkList.swift */,
 			);
 			path = LinkList;
 			sourceTree = "<group>";
@@ -100,6 +102,8 @@
 		C47CCBD92912C2A100224309 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF52913987200224309 /* PriorityQueue.swift */,
+				C47CCBF7291398A600224309 /* Queue.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -107,6 +111,7 @@
 		C47CCBDA2912C2AF00224309 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF42913986800224309 /* Define */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		C47CCBDB2912C2B900224309 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF32913980D00224309 /* Define */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -174,6 +180,30 @@
 				C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */,
 			);
 			path = Algs;
+			sourceTree = "<group>";
+		};
+		C47CCBF12913842200224309 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				C47CCBE32912C46900224309 /* SingleLinkNode.swift */,
+				C47CCBE52912C4B900224309 /* LinkListOperation.swift */,
+				C47CCBE72912C4F700224309 /* SingleLinkList.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		C47CCBF32913980D00224309 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		C47CCBF42913986800224309 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Define;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +269,9 @@
 				C47CCBE62912C4B900224309 /* LinkListOperation.swift in Sources */,
 				C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */,
 				C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */,
+				C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */,
 				C47CCBE82912C4F700224309 /* SingleLinkList.swift in Sources */,
+				C47CCBF8291398A600224309 /* Queue.swift in Sources */,
 				C47CCBEA2912C5C300224309 /* SelectionSort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

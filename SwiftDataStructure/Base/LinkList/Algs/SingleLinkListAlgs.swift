@@ -8,13 +8,13 @@
 import Foundation
 
 
-/// 合并两个有序单链表, 保持有序
+/// 合并两个有序单链表, 保持有序(LC21)
 /// - Parameters:
 ///   - l1: 第一个单链表
 ///   - l2: 第二个单链表
 /// - Returns: 合并结果
 func mergeTwoLists(l1: SingleLinkList<Int>, l2: SingleLinkList<Int>) -> SingleLinkList<Int> {
-    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: 0))
+    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
     var p = chain.head!
     var p1: SingleLinkNode? = l1.head
     var p2: SingleLinkNode? = l2.head
@@ -28,8 +28,8 @@ func mergeTwoLists(l1: SingleLinkList<Int>, l2: SingleLinkList<Int>) -> SingleLi
             p2 = p2?.next
         }
         
-        if p.next != nil {
-            p = p.next!
+        if let next = p.next {
+            p = next
         }
     }
     
@@ -42,4 +42,46 @@ func mergeTwoLists(l1: SingleLinkList<Int>, l2: SingleLinkList<Int>) -> SingleLi
      }
      
      return chain
+}
+
+/// 单链表分解(LC86)
+/// - Parameters:
+///   - l1: 单链表
+///   - x: 分解条件值
+func partitionLinkList(list: SingleLinkList<Int>, x: Int) -> SingleLinkList<Int> {
+    let l1 = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
+    let l2 = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
+    var p1 = l1.head, p2 = l2.head
+    var p = list.head
+    
+    while p != nil {
+        if p!.data >= x {
+            p2!.next = p
+            p2 = p2?.next
+        } else {
+            p1!.next = p
+            p1 = p1?.next
+        }
+        
+        let temp = p!.next
+        p!.next = nil
+        p = temp
+    }
+    
+    p1!.next = l2.head
+    return l1
+}
+
+/// 合并K个有序单链表(LC23)
+/// - Parameter lists: 单链表数组
+/// - Returns: 合并结果
+func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
+    if lists.count == 0 { return nil }
+    
+    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
+    var p = chain.head!
+    
+    // TODO
+    
+    return chain
 }
