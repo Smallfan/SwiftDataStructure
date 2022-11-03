@@ -92,7 +92,7 @@ func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
 /// - Returns: 合并结果
 func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
     if list.head == nil { return nil }
-    if k < list.count { return nil }
+    if k > list.count - 1 { return nil }
     
     var p1 = list.head, p2 = list.head
     
@@ -106,4 +106,20 @@ func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
     }
     
     return SingleLinkList<Int>(head: p2!)
+}
+
+/// 链表的中间结点
+/// - Parameter list: 单链表
+/// - Returns: 中间结点
+func getMiddleNode(list: SingleLinkList<Int>) -> SingleLinkNode<Int>? {
+    if list.head == nil { return nil }
+    if list.count == 1 { return list.head }
+    
+    var slow = list.head, fast = list.head
+    while fast != nil && fast?.next != nil {
+        slow = slow?.next
+        fast = fast?.next?.next
+    }
+    
+    return slow
 }
