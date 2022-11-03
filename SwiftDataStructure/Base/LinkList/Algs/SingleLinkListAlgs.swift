@@ -85,3 +85,25 @@ func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
     
     return chain
 }
+
+/// 链表中倒数第k个节点
+/// - Parameter list: 单链表
+/// - k: 第k个结点
+/// - Returns: 合并结果
+func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
+    if list.head == nil { return nil }
+    if k < list.count { return nil }
+    
+    var p1 = list.head, p2 = list.head
+    
+    for _ in 0 ..< k {
+        p1 = p1?.next
+    }
+    
+    while p1 != nil {
+        p2 = p2?.next
+        p1 = p1?.next
+    }
+    
+    return SingleLinkList<Int>(head: p2!)
+}
