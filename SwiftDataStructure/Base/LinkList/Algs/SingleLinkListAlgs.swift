@@ -92,7 +92,7 @@ func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
 /// - Returns: 合并结果
 func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
     if list.head == nil { return nil }
-    if k > list.count - 1 { return nil }
+    if k > list.count { return nil }
     
     var p1 = list.head, p2 = list.head
     
@@ -122,4 +122,22 @@ func getMiddleNode(list: SingleLinkList<Int>) -> SingleLinkNode<Int>? {
     }
     
     return slow
+}
+
+/// 删除链表的倒数第 N 个结点
+/// - Parameter list: 单链表
+/// - n: 第n个结点
+/// - Returns: 合并结果
+func removeKthFromEnd(list: SingleLinkList<Int>, n: Int) -> SingleLinkList<Int>? {
+    if list.head == nil { return nil }
+    if n > list.count { return nil }
+    
+    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
+    chain.head?.next = list.head
+    
+    let nNode = getKthFromEnd(list: chain, k: n + 1)?.head
+    guard let nNode else { return nil }
+    
+    nNode.next = nNode.next?.next
+    return chain
 }
