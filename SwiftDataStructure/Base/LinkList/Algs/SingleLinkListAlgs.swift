@@ -193,4 +193,16 @@ class SingleLinkListAlgs {
         
         return slow
     }
+    
+    // LC206
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        
+        let last = reverseList(head?.next)
+        head?.next?.next = head
+        head?.next = nil
+        return last
+    }
 }

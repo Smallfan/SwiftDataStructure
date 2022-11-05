@@ -14,6 +14,7 @@
 		C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */; };
 		C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF52913987200224309 /* PriorityQueue.swift */; };
 		C47CCBF8291398A600224309 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF7291398A600224309 /* Queue.swift */; };
+		C47CCBFB2916EFC000224309 /* DivideConquerAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBFA2916EFC000224309 /* DivideConquerAlgs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		C47CCBEF2913705D00224309 /* SingleLinkListAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLinkListAlgs.swift; sourceTree = "<group>"; };
 		C47CCBF52913987200224309 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		C47CCBF7291398A600224309 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		C47CCBFA2916EFC000224309 /* DivideConquerAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivideConquerAlgs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		C47CCBCF2912C27200224309 /* SwiftDataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF92916EFA100224309 /* Divide&Conquer */,
 				C47CCBE12912C31100224309 /* Complex */,
 				C47CCBE02912C30200224309 /* Base */,
 				C47CCBDF2912C2FD00224309 /* Sort */,
@@ -200,6 +203,14 @@
 			path = Define;
 			sourceTree = "<group>";
 		};
+		C47CCBF92916EFA100224309 /* Divide&Conquer */ = {
+			isa = PBXGroup;
+			children = (
+				C47CCBFA2916EFC000224309 /* DivideConquerAlgs.swift */,
+			);
+			path = "Divide&Conquer";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +272,7 @@
 				C47CCBD12912C27200224309 /* main.swift in Sources */,
 				C47CCBE42912C46900224309 /* ListNode.swift in Sources */,
 				C47CCBF02913705D00224309 /* SingleLinkListAlgs.swift in Sources */,
+				C47CCBFB2916EFC000224309 /* DivideConquerAlgs.swift in Sources */,
 				C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */,
 				C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */,
 				C47CCBF8291398A600224309 /* Queue.swift in Sources */,
