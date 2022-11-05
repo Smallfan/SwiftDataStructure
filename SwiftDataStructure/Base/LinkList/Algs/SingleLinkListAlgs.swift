@@ -38,7 +38,7 @@ class SingleLinkListAlgs {
             p.next = p2
         }
          
-        return chain
+        return chain.next
     }
 
     // LC86
@@ -68,12 +68,30 @@ class SingleLinkListAlgs {
 
     // LC23
     func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
+        if lists.count == 0 {
+            return nil
+        }
+        
         let chain = ListNode(-1)
-        var p: ListNode? = chain
+        var p = chain
         
-        // TODO
+        let pg = PriorityQueue<ListNode>(direction: .minHeap)
+        for head in lists {
+            if head != nil {
+                pg.add(head!)
+            }
+        }
         
-        return chain
+        while !pg.isEmpty() {
+            let node = pg.pop()
+            p.next = node
+            if node?.next != nil {
+                pg.add(node!.next!)
+            }
+            p = p.next!
+        }
+        
+        return chain.next
     }
 
     // 剑指offer 22
@@ -130,5 +148,49 @@ class SingleLinkListAlgs {
         return true
     }
     
+    // LC160
+    func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+        var p1 = headA, p2 = headB
+        while p1 !== p2 {
+            if p1 == nil {
+                p1 = headB
+            } else {
+                p1 = p1?.next
+            }
+            
+            if p2 == nil {
+                p2 = headA
+            } else {
+                p2 = p2?.next
+            }
+        }
+        
+        return p1
+    }
     
+    // 剑指offerII 22
+    func detectCycle(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil { return nil }
+        var slow = head, fast = head
+        
+        while fast != nil || fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+            if slow === fast {
+                break
+            }
+        }
+        
+        if fast == nil || fast?.next == nil {
+            return nil
+        }
+        
+        slow = head
+        while slow !== fast {
+            fast = fast?.next
+            slow = slow?.next
+        }
+        
+        return slow
+    }
 }

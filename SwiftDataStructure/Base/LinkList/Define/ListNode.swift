@@ -16,8 +16,14 @@ class ListNode {
     init(_ val: Int) {
         self.val = val
     }
-    
-    static func == (lhs: ListNode, rhs: ListNode) -> Bool {
+}
+
+extension ListNode: Comparable {
+    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
         return lhs.val == rhs.val
+    }
+    
+    public static func < (lhs: ListNode, rhs: ListNode) -> Bool {
+        return lhs.val < rhs.val
     }
 }

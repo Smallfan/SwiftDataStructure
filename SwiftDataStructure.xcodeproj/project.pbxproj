@@ -98,8 +98,6 @@
 		C47CCBD92912C2A100224309 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				C47CCBF52913987200224309 /* PriorityQueue.swift */,
-				C47CCBF7291398A600224309 /* Queue.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -196,6 +194,8 @@
 		C47CCBF42913986800224309 /* Define */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBF52913987200224309 /* PriorityQueue.swift */,
+				C47CCBF7291398A600224309 /* Queue.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
