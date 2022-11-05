@@ -7,17 +7,17 @@
 
 import Foundation
 
-class SingleLinkNode<E: Equatable & Comparable> {
-    var val: E
-    var next: SingleLinkNode?
+class ListNode {
+    var val: Int
+    var next: ListNode?
     
     
     
-    init(val: E) {
+    init(_ val: Int) {
         self.val = val
     }
     
-    static func == (lhs: SingleLinkNode, rhs: SingleLinkNode) -> Bool {
+    static func == (lhs: ListNode, rhs: ListNode) -> Bool {
         return lhs.val == rhs.val
     }
 }
