@@ -40,7 +40,7 @@ class SingleLinkList<E: Equatable & Comparable> {
         var curNode = head
         
         while curNode != nil {
-            nodes.append(curNode!.data)
+            nodes.append(curNode!.val)
             curNode = curNode?.next
         }
         
@@ -52,9 +52,9 @@ class SingleLinkList<E: Equatable & Comparable> {
 extension SingleLinkList: LinkListOperation {
     func append(atHead element: E) {
         if head == nil {
-            head = SingleLinkNode(data: element)
+            head = SingleLinkNode(val: element)
         } else {
-            let newHead = SingleLinkNode(data: element)
+            let newHead = SingleLinkNode(val: element)
             newHead.next = head
             head = newHead
         }
@@ -66,7 +66,7 @@ extension SingleLinkList: LinkListOperation {
             tail = _node(count - 1)
         }
         
-        tail!.next = SingleLinkNode(data: element)
+        tail!.next = SingleLinkNode(val: element)
         tail = tail?.next
         count += 1
     }
@@ -80,7 +80,7 @@ extension SingleLinkList: LinkListOperation {
             append(atTail: element)
         } else {
             if let curNode = _node(index - 1) {
-                let insertNode = SingleLinkNode(data: element)
+                let insertNode = SingleLinkNode(val: element)
                 insertNode.next = curNode.next
                 curNode.next = insertNode
                 count += 1
@@ -93,11 +93,11 @@ extension SingleLinkList: LinkListOperation {
             fatalError("Index out of range")
         }
         
-        curNode.data = element
+        curNode.val = element
     }
 
     func index(of i: Int) -> E? {
-        return _node(i)?.data
+        return _node(i)?.val
     }
 
     func contains(_ element: E) -> Bool {
@@ -105,7 +105,7 @@ extension SingleLinkList: LinkListOperation {
         
         var curNode = head
         while curNode != nil {
-            if curNode!.data == element {
+            if curNode!.val == element {
                 return true
             }
             curNode = curNode?.next
@@ -124,7 +124,7 @@ extension SingleLinkList: LinkListOperation {
             return removeLast()
         } else {
             let prevNode = _node(index - 1)
-            let data = prevNode?.next?.data
+            let data = prevNode?.next?.val
             prevNode?.next = prevNode?.next?.next
             
             count -= 1
@@ -134,7 +134,7 @@ extension SingleLinkList: LinkListOperation {
 
     @discardableResult
     func removeFirst() -> E? {
-        let data = head?.data
+        let data = head?.val
         if count == 1 {
             head = nil
         } else {
@@ -149,13 +149,13 @@ extension SingleLinkList: LinkListOperation {
         guard head != nil else { return nil }
         
         if count == 1 {
-            let val = head?.data
+            let val = head?.val
             head = nil
             count -= 1
             return val
         } else {
             let prevNode = _node(count - 2)
-            let val = prevNode?.next?.data
+            let val = prevNode?.next?.val
             prevNode?.next = prevNode?.next?.next
             count -= 1
             return val

@@ -8,16 +8,16 @@
 import Foundation
 
 class SingleLinkNode<E: Equatable & Comparable> {
-    var data: E
+    var val: E
     var next: SingleLinkNode?
     
     
     
-    init(data: E) {
-        self.data = data
+    init(val: E) {
+        self.val = val
     }
     
     static func == (lhs: SingleLinkNode, rhs: SingleLinkNode) -> Bool {
-        return lhs.data == rhs.data
+        return lhs.val == rhs.val
     }
 }

@@ -13,14 +13,14 @@ import Foundation
 ///   - l1: 第一个单链表
 ///   - l2: 第二个单链表
 /// - Returns: 合并结果
-func mergeTwoLists(l1: SingleLinkList<Int>, l2: SingleLinkList<Int>) -> SingleLinkList<Int> {
-    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
-    var p = chain.head!
-    var p1: SingleLinkNode? = l1.head
-    var p2: SingleLinkNode? = l2.head
+func mergeTwoLists(l1: SingleLinkNode<Int>, l2: SingleLinkNode<Int>) -> SingleLinkNode<Int> {
+    let chain = SingleLinkNode(val: -1)
+    var p = chain
+    var p1: SingleLinkNode<Int>? = l1
+    var p2: SingleLinkNode<Int>? = l2
     
     while p1 != nil && p2 != nil {
-        if p1!.data < p2!.data {
+        if p1!.val < p2!.val {
             p.next = p1
             p1 = p1?.next
         } else {
@@ -48,18 +48,18 @@ func mergeTwoLists(l1: SingleLinkList<Int>, l2: SingleLinkList<Int>) -> SingleLi
 /// - Parameters:
 ///   - l1: 单链表
 ///   - x: 分解条件值
-func partitionLinkList(list: SingleLinkList<Int>, x: Int) -> SingleLinkList<Int> {
-    let l1 = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
-    let l2 = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
-    var p1 = l1.head, p2 = l2.head
-    var p = list.head
+func partitionLinkList(list: SingleLinkNode<Int>, x: Int) -> SingleLinkNode<Int>? {
+    let l1 = SingleLinkNode(val: -1)
+    let l2 = SingleLinkNode(val: -1)
+    var p1: SingleLinkNode<Int>? = l1, p2: SingleLinkNode<Int>? = l2
+    var p: SingleLinkNode<Int>? = list
     
     while p != nil {
-        if p!.data >= x {
-            p2!.next = p
+        if (p?.val)! >= x {
+            p2?.next = p
             p2 = p2?.next
         } else {
-            p1!.next = p
+            p1?.next = p
             p1 = p1?.next
         }
         
@@ -68,18 +68,16 @@ func partitionLinkList(list: SingleLinkList<Int>, x: Int) -> SingleLinkList<Int>
         p = temp
     }
     
-    p1!.next = l2.head?.next
+    p1?.next = l2.next
     return l1
 }
 
 /// 合并K个有序单链表(LC23)
 /// - Parameter lists: 单链表数组
 /// - Returns: 合并结果
-func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
-    if lists.count == 0 { return nil }
-    
-    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
-    var p = chain.head!
+func mergeKLists(lists: [SingleLinkNode<Int>]) -> SingleLinkNode<Int>? {
+    let chain = SingleLinkNode(val: -1)
+    var p: SingleLinkNode<Int>? = chain
     
     // TODO
     
@@ -90,11 +88,8 @@ func mergeKLists(lists: [SingleLinkList<Int>]) -> SingleLinkList<Int>? {
 /// - Parameter list: 单链表
 /// - k: 第k个结点
 /// - Returns: 合并结果
-func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
-    if list.head == nil { return nil }
-    if k > list.count { return nil }
-    
-    var p1 = list.head, p2 = list.head
+func getKthFromEnd(list: SingleLinkNode<Int>, k: Int) -> SingleLinkNode<Int>? {
+    var p1: SingleLinkNode<Int>? = list, p2: SingleLinkNode<Int>? = list
     
     for _ in 0 ..< k {
         p1 = p1?.next
@@ -105,17 +100,14 @@ func getKthFromEnd(list: SingleLinkList<Int>, k: Int) -> SingleLinkList<Int>? {
         p1 = p1?.next
     }
     
-    return SingleLinkList<Int>(head: p2!)
+    return p2
 }
 
 /// 链表的中间结点
 /// - Parameter list: 单链表
 /// - Returns: 中间结点
-func getMiddleNode(list: SingleLinkList<Int>) -> SingleLinkNode<Int>? {
-    if list.head == nil { return nil }
-    if list.count == 1 { return list.head }
-    
-    var slow = list.head, fast = list.head
+func getMiddleNode(list: SingleLinkNode<Int>) -> SingleLinkNode<Int>? {
+    var slow: SingleLinkNode<Int>? = list, fast: SingleLinkNode<Int>? = list
     while fast != nil && fast?.next != nil {
         slow = slow?.next
         fast = fast?.next?.next
@@ -128,14 +120,11 @@ func getMiddleNode(list: SingleLinkList<Int>) -> SingleLinkNode<Int>? {
 /// - Parameter list: 单链表
 /// - n: 第n个结点
 /// - Returns: 合并结果
-func removeKthFromEnd(list: SingleLinkList<Int>, n: Int) -> SingleLinkList<Int>? {
-    if list.head == nil { return nil }
-    if n > list.count { return nil }
+func removeKthFromEnd(list: SingleLinkNode<Int>, n: Int) -> SingleLinkNode<Int>? {
+    let chain = SingleLinkNode(val: -1)
+    chain.next = list
     
-    let chain = SingleLinkList<Int>(head: SingleLinkNode(data: -1))
-    chain.head?.next = list.head
-    
-    let nNode = getKthFromEnd(list: chain, k: n + 1)?.head
+    let nNode = getKthFromEnd(list: chain, k: n + 1)
     guard let nNode else { return nil }
     
     nNode.next = nNode.next?.next
