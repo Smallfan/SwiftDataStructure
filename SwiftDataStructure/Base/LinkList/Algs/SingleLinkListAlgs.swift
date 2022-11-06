@@ -205,4 +205,61 @@ class SingleLinkListAlgs {
         head?.next = nil
         return last
     }
+    
+    var flag: ListNode? = nil
+    func reverseN(_ head: ListNode?, _ n: Int) -> ListNode? {
+        if n == 1 {
+            flag = head?.next
+            return head
+        }
+        
+        let last = reverseN(head?.next, n - 1)
+        head?.next?.next = head
+        head?.next = flag
+        return last
+    }
+    
+    // LC92
+    func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
+        if left == 1 {
+            return reverseN(head, right)
+        }
+        
+        head?.next = reverseBetween(head?.next, left - 1, right - 1)
+        return head
+    }
+    
+    func reverseBetween2(_ a: ListNode?, _ b: ListNode?) -> ListNode? {
+        var pre: ListNode?
+        var cur = a
+        var next = a
+        
+        while cur !== b {
+            next = cur?.next
+            cur?.next = pre
+            pre = cur
+            cur = next
+        }
+        
+        return pre
+    }
+    
+    // LC25
+    func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+        if head == nil {
+            return nil
+        }
+        
+        var a = head, b = head
+        for _ in 0..<k {
+            if b == nil {
+                return head
+            }
+            b = b?.next
+        }
+        
+        let newHead = reverseBetween2(a, b)
+        a?.next = reverseKGroup(b, k)
+        return newHead
+    }
 }
