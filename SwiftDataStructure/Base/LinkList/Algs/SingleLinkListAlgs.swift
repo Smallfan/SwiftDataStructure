@@ -262,4 +262,23 @@ class SingleLinkListAlgs {
         a?.next = reverseKGroup(b, k)
         return newHead
     }
+    
+    // LC83
+    func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+        if head == nil {
+            return nil
+        }
+        
+        var slow = head, fast = head
+        while fast != nil {
+            if slow?.val != fast?.val {
+                slow?.next = fast
+                slow = slow?.next
+            }
+            fast = fast?.next
+        }
+        
+        slow?.next = nil
+        return head
+    }
 }

@@ -15,6 +15,7 @@
 		C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF52913987200224309 /* PriorityQueue.swift */; };
 		C47CCBF8291398A600224309 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBF7291398A600224309 /* Queue.swift */; };
 		C47CCBFB2916EFC000224309 /* DivideConquerAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBFA2916EFC000224309 /* DivideConquerAlgs.swift */; };
+		C47CCBFE2917A11C00224309 /* SqListAlgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CCBFD2917A11C00224309 /* SqListAlgs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		C47CCBF52913987200224309 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		C47CCBF7291398A600224309 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		C47CCBFA2916EFC000224309 /* DivideConquerAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivideConquerAlgs.swift; sourceTree = "<group>"; };
+		C47CCBFD2917A11C00224309 /* SqListAlgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqListAlgs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		C47CCBD82912C29500224309 /* SequenceList */ = {
 			isa = PBXGroup;
 			children = (
+				C47CCBFC2917A10D00224309 /* Algs */,
 			);
 			path = SequenceList;
 			sourceTree = "<group>";
@@ -211,6 +214,14 @@
 			path = "Divide&Conquer";
 			sourceTree = "<group>";
 		};
+		C47CCBFC2917A10D00224309 /* Algs */ = {
+			isa = PBXGroup;
+			children = (
+				C47CCBFD2917A11C00224309 /* SqListAlgs.swift */,
+			);
+			path = Algs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,6 +286,7 @@
 				C47CCBFB2916EFC000224309 /* DivideConquerAlgs.swift in Sources */,
 				C47CCBED2912C5EA00224309 /* InsertionSort.swift in Sources */,
 				C47CCBF62913987200224309 /* PriorityQueue.swift in Sources */,
+				C47CCBFE2917A11C00224309 /* SqListAlgs.swift in Sources */,
 				C47CCBF8291398A600224309 /* Queue.swift in Sources */,
 				C47CCBEA2912C5C300224309 /* SelectionSort.swift in Sources */,
 			);
